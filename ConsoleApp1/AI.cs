@@ -53,6 +53,39 @@ namespace ConsoleApp1
             }
             return board;
         }
+        public Board calculateReverse(Board board)
+        {
+            board.checkscore();
+            if (board.score == 0)
+            {
+                List<Board> moves = new List<Board>();
+                Parallel.For(1, 10, i =>
+                {
+
+                    if (board.checkMove(i))
+                    {
+                        Board newboard = (Board)board.Clone();
+                        newboard.makeMove(i);
+                        moves.Add(calculateAlfa(newboard));
+                    }
+
+                });
+                List<int> scores = new List<int>();
+                foreach (Board board1 in moves)
+                {
+                    scores.Add(board1.score);
+                }
+                if (scores.Count == 0)
+                {
+                    Console.WriteLine("This was a draw, want to play again?");
+                    end = false;
+                    return board;
+                }
+                int minimumValueIndex = scores.IndexOf(scores.Max());
+                return moves[minimumValueIndex];
+            }
+            return board;
+        }
         public Board calculateBeta(Board board)
         {
             board.checkscore();

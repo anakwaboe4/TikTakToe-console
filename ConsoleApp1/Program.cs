@@ -4,41 +4,109 @@ using System.Xml;
 Console.WriteLine("Hello, welcome to my simple game. TikTakToe");
 while (true)
 {
+    bool reverse = false;
     Board currentboard = new Board();
     AI ai = new AI();
 
     while (ai.end)
     {
-        Console.WriteLine("please type a number that correspons with the square");
+        Console.WriteLine("please type a number that correspons with the square (or type 0 to let me make this move)");
         Console.WriteLine("|1|2|3|");
         Console.WriteLine("|4|5|6|");
         Console.WriteLine("|7|8|9|");
         try
         {
             int square = Convert.ToInt32(Console.ReadLine());
-            if (currentboard.checkMove(square))
+            if (square == 0)
             {
-                currentboard.makeMove(square);
-                WriteBoard(currentboard.boardState);
-                currentboard = ai.calculate(currentboard);
-                WriteBoard(currentboard.boardState);
-                Console.WriteLine("the current score is: " + currentboard.score);
-                currentboard.checkscore();
-                if (currentboard.score == 1)
+                if (!reverse)
                 {
-                    Console.WriteLine("You win this game, want to play again?");
-                    ai.end = false;
+                    currentboard = ai.calculateReverse(currentboard);
+                    WriteBoard(currentboard.boardState);
+                    Console.WriteLine("the current score is: " + currentboard.score);
+                    currentboard.checkscore();
+                    if (currentboard.score == 1)
+                    {
+                        Console.WriteLine("I win this game, want to try again?");
+                        ai.end = false;
+                    }
+                    if (currentboard.score == -1)
+                    {
+                        Console.WriteLine("You win this game, want to play again?");
+                        ai.end = false;
+                    }
                 }
-                if (currentboard.score == -1)
+                else
                 {
-                    Console.WriteLine("I win this game, want to try again?");
-                    ai.end = false;
+                    currentboard = ai.calculate(currentboard);
+                    WriteBoard(currentboard.boardState);
+                    Console.WriteLine("the current score is: " + currentboard.score);
+                    currentboard.checkscore();
+                    if (currentboard.score == 1)
+                    {
+                        Console.WriteLine("You win this game, want to play again?");
+                        ai.end = false;
+                    }
+                    if (currentboard.score == -1)
+                    {
+                        Console.WriteLine("I win this game, want to try again?");
+                        ai.end = false;
+                    }
+                }
+                reverse = !reverse;
+            }
+            else if (!reverse) { 
+                if (currentboard.checkMove(square))
+                {
+                    currentboard.makeMove(square);
+                    WriteBoard(currentboard.boardState);
+                    currentboard = ai.calculate(currentboard);
+                    WriteBoard(currentboard.boardState);
+                    Console.WriteLine("the current score is: " + currentboard.score);
+                    currentboard.checkscore();
+                    if (currentboard.score == 1)
+                    {
+                        Console.WriteLine("You win this game, want to play again?");
+                        ai.end = false;
+                    }
+                    if (currentboard.score == -1)
+                    {
+                        Console.WriteLine("I win this game, want to try again?");
+                        ai.end = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("that is an illegal move, try again");
                 }
             }
             else
             {
-                Console.WriteLine("that is an illegal move, try again");
+                if (currentboard.checkMove(square))
+                {
+                    currentboard.makeMoveO(square);
+                    WriteBoard(currentboard.boardState);
+                    currentboard = ai.calculateReverse(currentboard);
+                    WriteBoard(currentboard.boardState);
+                    Console.WriteLine("the current score is: " + currentboard.score);
+                    currentboard.checkscore();
+                    if (currentboard.score == 1)
+                    {
+                        Console.WriteLine("I win this game, want to try again?");
+                        ai.end = false;
+                    }
+                    if (currentboard.score == -1)
+                    {
+                        Console.WriteLine("You win this game, want to play again?");
+                        ai.end = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("that is an illegal move, try again");
+                }
             }
+
         }
         catch(Exception e) { Console.WriteLine("That is not a allowed number :( "); }
         

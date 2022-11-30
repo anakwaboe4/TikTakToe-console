@@ -51,7 +51,6 @@ namespace ConsoleApp1
                 int minimumValueIndex = scores.IndexOf(scores.Min());
                 return moves[minimumValueIndex];
             }
-            Console.WriteLine("this already has a result");
             return board;
         }
         public Board calculateBeta(Board board)

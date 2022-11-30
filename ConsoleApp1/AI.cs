@@ -26,9 +26,9 @@ namespace ConsoleApp1
            if (board.score == 0)
             {
                 List<Board> moves = new List<Board>();
-                for (int i = 1; i < 10; i++)
+                Parallel.For (1, 10, i =>
                 {
-                    
+
                     if (board.checkMove(i))
                     {
                         Board newboard = (Board)board.Clone();
@@ -36,7 +36,7 @@ namespace ConsoleApp1
                         moves.Add(calculateBeta(newboard));
                     }
 
-                }
+                }) ;
                 List<int> scores = new List<int>();
                 foreach (Board board1 in moves)
                 {

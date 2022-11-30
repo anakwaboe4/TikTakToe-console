@@ -1,0 +1,15 @@
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Debug\net6.0\TikTakToe.exe
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Debug\net6.0\TikTakToe.deps.json
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Debug\net6.0\TikTakToe.runtimeconfig.json
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Debug\net6.0\TikTakToe.dll
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Debug\net6.0\TikTakToe.pdb
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\TikTakToe.csproj.AssemblyReference.cache
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\TikTakToe.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\TikTakToe.AssemblyInfoInputs.cache
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\TikTakToe.AssemblyInfo.cs
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\TikTakToe.csproj.CoreCompileInputs.cache
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\TikTakToe.dll
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\refint\TikTakToe.dll
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\TikTakToe.pdb
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\TikTakToe.genruntimeconfig.cache
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Debug\net6.0\ref\TikTakToe.dll

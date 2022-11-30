@@ -1,0 +1,5 @@
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Release\net6.0\publish\TikTakToe.exe
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Release\net6.0\publish\TikTakToe.dll
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Release\net6.0\publish\TikTakToe.deps.json
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Release\net6.0\publish\TikTakToe.runtimeconfig.json
+C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Release\net6.0\publish\TikTakToe.pdb

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="TikTakToe.exe" version="1.0.0.0" publicKeyToken="ebc79ed2c91c92c3" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Launcher" version="7.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Launcher.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="4" minorVersion="10" buildNumber="0" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="16816">
+      <assemblyIdentity name="Launcher" version="7.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>0H4QWI611cCV/db87LMu/h71udTLiUsU7WvUn7stQKo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="TikTakToe.deps.json" size="472">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>yg94gCHOfi5xilRE9OxbpMtj/lN5f8OgyFZgrG5Sd4I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TikTakToe.dll" size="9648">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>o982/VmkClufqsugNRzSBV1lc2mXzlQBDXZgrMKF7uY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TikTakToe.exe" size="148400">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>KNtUR9BknGHdvH8Ff1IERtl5Kn/DjGSqUyEyR1BcBps=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TikTakToe.runtimeconfig.json" size="253">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>3tOutYVqEdsLZUp4VXRJDKtVg56/sX7+njm4lhj8W5E=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=CODIT\laerens" issuerKeyHash="c4ae66c126de11ffe87e7c5908d99fe4e57c9e96" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>fnw1O7F73LdoCxBycVUNU5CHox6znEuMkAtEpxEmJ8o=</DigestValue></Reference></SignedInfo><SignatureValue>TjRKo+uawlOKmjexXG+gu7q9Ii9D4fHYEATwovkUBAxT5vAQNz+Lb1ty1BxDrLyOJWh3jkzuryaPKJ9ELLcMHaF7tiAPFGMA/tuW94z2XNBAErGFhQGpZCMmlcu4oaoGWavxT9m5j4TmMzq+BiLJmarudv5ADZDPrUGvRhMiUNE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>1fd/X/i0IqhERejNdI7DZQoMyzwKtHUOWurfc5KiIvihbCAYJXL8W2dxQ2tdZKy8WzIxZCrlKEsyzxMgTc+cBaO+LlhOuy5sIm7jqo3g0rpZB/X+WLsE0ZjMd+3zT0sx76Va8To6d1OVpS/S0MY8GvLn0a4VkfEdao8hb9uQ68k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="ca272611a7440b908c4b9cb31ea38790530d557172100b68b7dc7bb13b357c7e" Description="" Url=""><as:assemblyIdentity name="TikTakToe.exe" version="1.0.0.0" publicKeyToken="ebc79ed2c91c92c3" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=CODIT\laerens</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>QNwFOELfXqRURHzksChyACfb2CogK1CJLZQQ+4yuprA=</DigestValue></Reference></SignedInfo><SignatureValue>XkFj0qwEQgHytqB/TG3k9zIuQLiduaFnk5zuEl8ASDRr5XFRV9sg0dxxZP3YLWbkvUMudJc19jxeqDLoSrrmN76wPJKd2Zgz2MskTHLX5mXc383gDXbH4hq18Rz4OEIF/yV6b2HymlmjCqnrnR8Np1pXlR2b4ApwKFb/e4F+U5I=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>1fd/X/i0IqhERejNdI7DZQoMyzwKtHUOWurfc5KiIvihbCAYJXL8W2dxQ2tdZKy8WzIxZCrlKEsyzxMgTc+cBaO+LlhOuy5sIm7jqo3g0rpZB/X+WLsE0ZjMd+3zT0sx76Va8To6d1OVpS/S0MY8GvLn0a4VkfEdao8hb9uQ68k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBzTCCATagAwIBAgIQH1p9+fCh2a1GlqjsE2mW0jANBgkqhkiG9w0BAQsFADAlMSMwIQYDVQQDHhoAQwBPAEQASQBUAFwAbABhAGUAcgBlAG4AczAeFw0yMjExMzAwOTE2MDRaFw0yMzExMzAxNTE2MDRaMCUxIzAhBgNVBAMeGgBDAE8ARABJAFQAXABsAGEAZQByAGUAbgBzMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDV939f+LQiqERF6M10jsNlCgzLPAq0dQ5a6t9zkqIi+KFsIBglcvxbZ3FDa11krLxbMjFkKuUoSzLPEyBNz5wFo74uWE67LmwibuOqjeDSulkH9f5YuwTRmMx37fNPSzHvpVrxOjp3U5WlL9LQxjwa8ufRrhWR8R1qjyFv25DryQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBALHqoLKE0T+edkfrFOr11P2CAKfZHWop8nDRiFYHyQPnJ/UpYYIQ3Ga2NQCX/4md88ENBbv8fAh75nAxvzdyVXIGTvidPKsAfY1jugvuhyVi/i0MgKv4BM8XYTQYAOyrplTQAhQqI4D1Pf2S9B5T2DDoFLsZyMCfnv4HVEQZwCNb</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

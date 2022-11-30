@@ -26,12 +26,12 @@ while (true)
                 currentboard.checkscore();
                 if (currentboard.score == 1)
                 {
-                    Console.WriteLine("You win this game, want to play again");
+                    Console.WriteLine("You win this game, want to play again?");
                     ai.end = false;
                 }
                 if (currentboard.score == -1)
                 {
-                    Console.WriteLine("I win this game, want to try again");
+                    Console.WriteLine("I win this game, want to try again?");
                     ai.end = false;
                 }
             }

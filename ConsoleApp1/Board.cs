@@ -77,8 +77,8 @@ namespace ConsoleApp1
             //check logic again
             if (boardState[0, 0] == "X" && boardState[1, 0] == "X" && boardState[2, 0] == "X") { score = 1; }
             if (boardState[0, 2] == "X" && boardState[1, 2] == "X" && boardState[2, 2] == "X") { score = 1; }
-            if (boardState[0, 0] == "O" && boardState[1, 0] == "O" && boardState[2, 0] == "O") { score = 1; }
-            if (boardState[0, 2] == "O" && boardState[1, 2] == "O" && boardState[2, 2] == "O") { score = 1; }
+            if (boardState[0, 0] == "O" && boardState[1, 0] == "O" && boardState[2, 0] == "O") { score = -1; }
+            if (boardState[0, 2] == "O" && boardState[1, 2] == "O" && boardState[2, 2] == "O") { score = -1; }
             // give some points for 2 in a row with a null in them
             
         }

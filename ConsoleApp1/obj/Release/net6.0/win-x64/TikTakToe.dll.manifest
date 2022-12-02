@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="TikTakToe.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="TikTakToe.exe" version="1.3.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Launcher" version="7.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -62,13 +62,13 @@
       <dsig:DigestValue>yg94gCHOfi5xilRE9OxbpMtj/lN5f8OgyFZgrG5Sd4I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TikTakToe.dll" size="11184">
+  <file name="TikTakToe.dll" size="17328">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>wrS3Ztg5ElPJEFa4MoFRKoRPoJNkNSrZRu5DoMO5c4s=</dsig:DigestValue>
+      <dsig:DigestValue>zMbwOuYLqmmks9stnYd2rIH0Rj8WDjizFhpZ7mfYyxU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TikTakToe.exe" size="148400">

@@ -7,7 +7,7 @@
 
 the engine is played with the numpad. it is very self explaining.
 
-![The TikTakToe gameplay](/images/tiktaktoeplay.png)
+![The TikTakToe gameplay](ConsoleApp1/images/tiktaktoeplay.png)
 
 - first the egine ask my to play or type 0 to let it move.
 - I play on square 5
@@ -20,7 +20,7 @@ the engine is played with the numpad. it is very self explaining.
 
 If you type **100** you enter the menu.
 
- ![The TikTakToe menu](/images/tiktaktoemenu.png)
+ ![The TikTakToe menu](ConsoleApp1/images/tiktaktoemenu.png)
 
  - option 1: is to start a new game
  - option 2: is to change the AI to the AIMulti.cs class, this is the ai of v1.1. (I don't clear the transpo table between moves so i would think of this as a cheat)

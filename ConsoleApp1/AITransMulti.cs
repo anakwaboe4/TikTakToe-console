@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
@@ -10,16 +11,16 @@ using System.Threading.Tasks.Sources;
 
 namespace ConsoleApp1
 {
-    class AI
+    class AITransMulti
     {
         public bool end;
         public int score;
-        public List<Board> transpotable = new List<Board>();
-        public AI()
+        public ConcurrentQueue<Board> transpotable = new ConcurrentQueue<Board>();
+        public AITransMulti()
         {
             end = true;
             score = 0;
-            transpotable = new List<Board>();
+            transpotable = new ConcurrentQueue< Board>();
         }
 
         public Board calculate(Board board)
@@ -28,7 +29,7 @@ namespace ConsoleApp1
             if (board.score == 0)
             {
                 List<Board> moves = new List<Board>();
-                for (int i = 1; i < 10; i++)
+                Parallel.For(1, 10, i =>
                 {
 
                     if (board.checkMove(i))
@@ -38,7 +39,7 @@ namespace ConsoleApp1
                         moves.Add(calculateBeta(newboard));
                     }
 
-                }
+                });
                 List<int> scores = new List<int>();
                 foreach (Board board1 in moves)
                 {
@@ -61,7 +62,7 @@ namespace ConsoleApp1
             if (board.score == 0)
             {
                 List<Board> moves = new List<Board>();
-                for (int i = 1; i < 10; i++)
+                Parallel.For(1, 10, i =>
                 {
 
                     if (board.checkMove(i))
@@ -71,7 +72,7 @@ namespace ConsoleApp1
                         moves.Add(calculateAlfa(newboard));
                     }
 
-                }
+                });
                 List<int> scores = new List<int>();
                 foreach (Board board1 in moves)
                 {
@@ -121,7 +122,7 @@ namespace ConsoleApp1
 
 
             }
-            transpotable.Add(board);
+            transpotable.Enqueue(board);
             return board;
         }
         public Board calculateAlfa(Board board)
@@ -156,7 +157,7 @@ namespace ConsoleApp1
 
 
             }
-            transpotable.Add(board);
+            transpotable.Enqueue(board);
             return board;
         }
     }

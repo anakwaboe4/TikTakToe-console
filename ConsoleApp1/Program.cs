@@ -256,7 +256,8 @@ static void WriteBoard(int[,] arr)
         }
         Console.Write(Environment.NewLine);
     }
-    
+    Console.Write(Environment.NewLine);
+
 
 }
 

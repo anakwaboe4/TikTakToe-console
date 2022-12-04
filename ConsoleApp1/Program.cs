@@ -124,6 +124,7 @@ while (true)
                         sw.Restart();
                         break;
                     case 7: AITransMulti aITransMulti = new AITransMulti();
+                        sw.Restart();
                         sw.Start();
                         _ = aITransMulti.calculate(new Board());
                         sw.Stop();

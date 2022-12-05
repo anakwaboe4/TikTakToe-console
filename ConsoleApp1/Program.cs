@@ -139,7 +139,7 @@ while (true)
                 if (!reverse)
                 {
                     if (transpotable) { currentboard = ai.calculateReverse(currentboard); }
-                    else { currentboard = aIMulti.calculate(currentboard); }
+                    else { currentboard = aIMulti.calculateReverse(currentboard); }
                     WriteBoard(currentboard.boardState);
                     Console.WriteLine("the current score is: " + currentboard.score);
                     currentboard.checkscore();
@@ -207,7 +207,7 @@ while (true)
                     currentboard.makeMoveO(square);
                     WriteBoard(currentboard.boardState);
                     if (transpotable) { currentboard = ai.calculateReverse(currentboard); }
-                    else { currentboard = aIMulti.calculate(currentboard); }
+                    else { currentboard = aIMulti.calculateReverse(currentboard); }
                     WriteBoard(currentboard.boardState);
                     Console.WriteLine("the current score is: " + currentboard.score);
                     currentboard.checkscore();

@@ -17,3 +17,22 @@ C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Release\net6.0\win-x64\T
 C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Release\net6.0\win-x64\refint\TikTakToe.dll
 C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.pdb
 C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Release\net6.0\win-x64\ref\TikTakToe.dll
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.csproj.AssemblyReference.cache
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.dll
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\refint\TikTakToe.dll
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.pdb
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\win-x64\TikTakToe.deps.json
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\win-x64\TikTakToe.runtimeconfig.json
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\win-x64\TikTakToe.exe
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\win-x64\TikTakToe.dll.manifest
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\win-x64\TikTakToe.application
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\win-x64\TikTakToe.dll
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\win-x64\TikTakToe.pdb
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.AssemblyInfoInputs.cache
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.AssemblyInfo.cs
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.csproj.CoreCompileInputs.cache
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.genruntimeconfig.cache
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.dll.manifest
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\TikTakToe.application
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\win-x64\ref\TikTakToe.dll

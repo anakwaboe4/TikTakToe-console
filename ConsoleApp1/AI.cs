@@ -25,7 +25,7 @@ namespace ConsoleApp1
         public Board calculate(Board board)
         {
             board.checkscore();
-            if (board.score == 0)
+            if (board.score < 10 && board.score > -10)
             {
                 List<Board> moves = new List<Board>();
                 for (int i = 1; i < 10; i++)
@@ -58,7 +58,7 @@ namespace ConsoleApp1
         public Board calculateReverse(Board board)
         {
             board.checkscore();
-            if (board.score == 0)
+            if (board.score < 10 && board.score > -10)
             {
                 List<Board> moves = new List<Board>();
                 for (int i = 1; i < 10; i++)
@@ -91,7 +91,7 @@ namespace ConsoleApp1
         public Board calculateBeta(Board board)
         {
             board.checkscore();
-            if (board.score == 0)
+            if (board.score < 10 && board.score > -10)
             {
                 foreach (Board board1 in transpotable)
                 {
@@ -127,7 +127,7 @@ namespace ConsoleApp1
         public Board calculateAlfa(Board board)
         {
             board.checkscore();
-            if (board.score == 0)
+            if (board.score < 10 && board.score > -10)
             {
                 foreach (Board board1 in transpotable)
                 {

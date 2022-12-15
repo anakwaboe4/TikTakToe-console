@@ -1,6 +1,7 @@
 ﻿using ConsoleApp1;
 using System.Diagnostics;
 using System.Xml;
+using TikTakToe;
 
 Console.WriteLine("Hello, welcome to my simple game. TikTakToe");
 Stopwatch sw = new Stopwatch();
@@ -21,7 +22,7 @@ while (true)
         Console.WriteLine("|4|5|6|");
         Console.WriteLine("|7|8|9|");
         try
-         {
+        {
             int square = Convert.ToInt32(Console.ReadLine());
             if (square == 100)
             {
@@ -32,6 +33,8 @@ while (true)
                 Console.WriteLine("4: bench with parrallel calculation");
                 Console.WriteLine("5: bench with singel treath calculation");
                 Console.WriteLine("6: full benchmark");
+                Console.WriteLine("7: bench with parrallel transpo calculation (failed ai)");
+                Console.WriteLine("8: random move vs perfect ai");
                 int option = Convert.ToInt32(Console.ReadLine());
                 AI benchai = new AI();
                 switch (option)
@@ -43,36 +46,37 @@ while (true)
                         transpotable = !transpotable;
                         break;
                     case 3:
-                        sw.Start();
-                        _ = benchai.calculate(new Board());
-                        sw.Stop();
-                        Console.WriteLine("Score:"+ sw.ElapsedMilliseconds + "ms");
                         sw.Restart();
-                        Console.WriteLine("now we do it again but see the power of transpo after startup");
                         sw.Start();
                         _ = benchai.calculate(new Board());
                         sw.Stop();
                         Console.WriteLine("Score:" + sw.ElapsedMilliseconds + "ms");
+                        Console.WriteLine("now we do it again but see the power of transpo after startup");
                         sw.Restart();
+                        sw.Start();
+                        _ = benchai.calculate(new Board());
+                        sw.Stop();
+                        Console.WriteLine("Score:" + sw.ElapsedMilliseconds + "ms");
                         break;
                     case 4:
+                        sw.Restart();
                         sw.Start();
                         _ = aIMulti.calculate(new Board());
                         sw.Stop();
                         Console.WriteLine("Score:" + sw.ElapsedMilliseconds + "ms");
-                        sw.Restart();
                         break;
                     case 5:
+                        sw.Restart();
                         sw.Start();
                         _ = aISingle.calculate(new Board());
                         sw.Stop();
                         Console.WriteLine("Score:" + sw.ElapsedMilliseconds + "ms");
-                        sw.Restart();
                         break;
                     case 6:
                         Console.WriteLine("making the cores hot and ready");
                         _ = aIMulti.calculate(new Board());
                         Console.WriteLine("and go" + Environment.NewLine);
+                        sw.Restart();
                         sw.Start();
                         _ = aISingle.calculate(new Board());
                         sw.Stop();
@@ -87,10 +91,10 @@ while (true)
                         Board temp = benchai.calculate(new Board());
                         sw.Stop();
                         Console.WriteLine("TimesTranspo: " + sw.ElapsedMilliseconds + "ms");
-                        sw.Restart();
                         //second move
-                        Console.WriteLine(Environment.NewLine+ "now for the following move:" + Environment.NewLine);
+                        Console.WriteLine(Environment.NewLine + "now for the following move:" + Environment.NewLine);
                         temp = benchai.calculateReverse(temp);
+                        sw.Restart();
                         sw.Start();
                         _ = aISingle.calculate(temp);
                         sw.Stop();
@@ -102,11 +106,11 @@ while (true)
                         Console.WriteLine("TimesMulti: " + sw.ElapsedMilliseconds + "ms");
                         sw.Restart();
                         sw.Start();
-                        _= benchai.calculate(temp);
+                        _ = benchai.calculate(temp);
                         sw.Stop();
                         Console.WriteLine("TimesTranspo: " + sw.ElapsedMilliseconds + "ms");
                         sw.Restart();
-                        Console.WriteLine(Environment.NewLine+ "and with a new game:"+ Environment.NewLine);
+                        Console.WriteLine(Environment.NewLine + "and with a new game:" + Environment.NewLine);
                         sw.Start();
                         _ = aISingle.calculate(new Board());
                         sw.Stop();
@@ -121,14 +125,109 @@ while (true)
                         _ = benchai.calculate(new Board());
                         sw.Stop();
                         Console.WriteLine("TimesTranspo: " + sw.ElapsedMilliseconds + "ms");
-                        sw.Restart();
                         break;
-                    case 7: AITransMulti aITransMulti = new AITransMulti();
+                    case 7:
+                        AITransMulti aITransMulti = new AITransMulti();
+                        sw.Restart();
                         sw.Start();
                         _ = aITransMulti.calculate(new Board());
                         sw.Stop();
                         Console.WriteLine("TimeMultiTranspo: " + sw.ElapsedMilliseconds + "ms");
-                        sw.Restart();
+                        break;
+                    case 8:
+                        RandomAI rando = new RandomAI();
+                        Board randoboard = new Board();
+                        int wins = 0;
+                        int loses = 0;
+                        int gamesplayed = 100;
+                        Console.WriteLine("How many games want you to be played");
+                        gamesplayed = Convert.ToInt32(Console.ReadLine());
+                        for (int i = 0; i < gamesplayed / 2; i++)
+                        {
+                            rando = new RandomAI();
+                            benchai.end = true;
+                            randoboard = new Board();
+                            while (benchai.end && rando.end)
+                            {
+
+                                randoboard = rando.calculateReverse(randoboard);
+                                WriteBoard(randoboard.boardState);
+                                randoboard.checkscore();
+                                if (randoboard.score == 10)
+                                {
+                                    wins++;
+                                    benchai.end = false;
+                                }
+                                if (randoboard.score == -10)
+                                {
+                                    loses++;
+                                    benchai.end = false;
+                                }
+                                if (!rando.end || !benchai.end)
+                                {
+                                    break;
+                                }
+                                randoboard = ai.calculate(randoboard);
+                                WriteBoard(randoboard.boardState);
+                                randoboard.checkscore();
+                                if (randoboard.score == 10)
+                                {
+                                    wins++;
+                                    benchai.end = false;
+                                }
+                                if (randoboard.score == -10)
+                                {
+                                    loses++;
+                                    benchai.end = false;
+                                }
+
+
+                            }
+                            rando = new RandomAI();
+                            benchai.end = true;
+                            randoboard = new Board();
+                            Console.WriteLine("-------next game-------");
+                            while (benchai.end && rando.end)
+                            {
+                                randoboard = ai.calculateReverse(randoboard);
+                                WriteBoard(randoboard.boardState);
+                                randoboard.checkscore();
+                                if (randoboard.score == 10)
+                                {
+                                    loses++;
+                                    benchai.end = false;
+                                }
+                                if (randoboard.score == -10)
+                                {
+                                    wins++;
+                                    benchai.end = false;
+                                }
+                                if (!benchai.end)
+                                {
+                                    break;
+                                }
+                                randoboard = rando.calculate(randoboard);
+                                WriteBoard(randoboard.boardState);
+                                randoboard.checkscore();
+                                if (randoboard.score == 10)
+                                {
+                                    loses++;
+                                    benchai.end = false;
+                                }
+                                if (randoboard.score == -10)
+                                {
+                                    wins++;
+                                    benchai.end = false;
+                                }
+                            }
+                            Console.WriteLine("-------next game-------");
+
+                        }
+                        Console.WriteLine("total games: " + gamesplayed);
+                        Console.WriteLine("wins: " + wins);
+                        Console.WriteLine("losses: " + loses);
+                        Console.WriteLine("draws: " + (gamesplayed - wins - loses));
+                        Console.WriteLine("notloserate: " + ((gamesplayed - loses) * 100 / gamesplayed) + "%");
                         break;
                     default: throw new Exception("not valid");
                 }
@@ -174,7 +273,8 @@ while (true)
                 }
                 reverse = !reverse;
             }
-            else if (!reverse) { 
+            else if (!reverse)
+            {
                 if (currentboard.checkMove(square))
                 {
                     currentboard.makeMove(square);
@@ -184,12 +284,12 @@ while (true)
                     WriteBoard(currentboard.boardState);
                     Console.WriteLine("the current score is: " + currentboard.score);
                     currentboard.checkscore();
-                    if (currentboard.score == 1)
+                    if (currentboard.score == 10)
                     {
                         Console.WriteLine("You win this game, want to play again?");
                         ai.end = false;
                     }
-                    if (currentboard.score == -1)
+                    if (currentboard.score == -10)
                     {
                         Console.WriteLine("I win this game, want to try again?");
                         ai.end = false;
@@ -211,12 +311,12 @@ while (true)
                     WriteBoard(currentboard.boardState);
                     Console.WriteLine("the current score is: " + currentboard.score);
                     currentboard.checkscore();
-                    if (currentboard.score == 1)
+                    if (currentboard.score == 10)
                     {
                         Console.WriteLine("I win this game, want to try again?");
                         ai.end = false;
                     }
-                    if (currentboard.score == -1)
+                    if (currentboard.score == -10)
                     {
                         Console.WriteLine("You win this game, want to play again?");
                         ai.end = false;
@@ -229,12 +329,12 @@ while (true)
             }
 
         }
-        catch(Exception e) 
-        { 
+        catch (Exception e)
+        {
             Console.WriteLine("That is not a allowed number :( ");
             //Console.WriteLine(e.Message);
         }
-        
+
     }
 }
 

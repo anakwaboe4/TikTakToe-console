@@ -35,4 +35,4 @@ If you type **100** you enter the menu.
 	- the ai's (running) from startup
 - option 7: hidden option that benches multithreated transpo ai (this one was a fail because it is slower then single thread transpo)
 
-## !! happy now BinaryPilot !!
+## !! happy now Anakwaboe4 !!

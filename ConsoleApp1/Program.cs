@@ -126,12 +126,8 @@ while (true)
                         sw.Stop();
                         Console.WriteLine("TimesTranspo: " + sw.ElapsedMilliseconds + "ms");
                         break;
-<<<<<<< HEAD
-                    case 7:
-                        AITransMulti aITransMulti = new AITransMulti();
-=======
+
                     case 7: AITransMulti aITransMulti = new AITransMulti();
->>>>>>> e23d32b6b49e6184ee44c511c466eca90ca0823c
                         sw.Restart();
                         sw.Start();
                         _ = aITransMulti.calculate(new Board());

@@ -1,12 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "945b3fg5D0uhQaRMoJXDIkwIURFNBs4ABG1KMxMZgm4aNTIKPR5iAzl0Ee4cFN/KLFnCewi4nR0hFDOfspuodQ==",
-=======
-  "dgSpecHash": "+yYPWa6gEYw/xO262aN0+nPipjmobg/Fd3TaKQKzmbBn/hRh95PVPFER4ipOY69Mk7XexVPbFWkw+25knl8VRw==",
->>>>>>> e23d32b6b49e6184ee44c511c466eca90ca0823c
   "success": true,
-  "projectFilePath": "C:\\Users\\laurent aerens\\source\\repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj",
+  "projectFilePath": "C:\\Users\\laerens\\source\\repos\\tiktaktoe\\ConsoleApp1\\TikTakToe.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\laerens\\source\\repos\\tiktaktoe\\ConsoleApp1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

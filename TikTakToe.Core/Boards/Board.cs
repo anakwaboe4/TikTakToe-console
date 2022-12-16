@@ -16,6 +16,8 @@ namespace TikTakToe.Core.Boards {
 
         public abstract bool MakeMove(int position, Squares move);
 
+        public abstract int CalculateScore();
+
         public abstract Squares[,] Get2Dim();
     }
 }

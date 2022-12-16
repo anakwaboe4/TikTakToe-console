@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TikTakToe.Core.Enums {
     public enum Squares {
         Empty,
-        O,
-        X
+        X,
+        O
     }
 }

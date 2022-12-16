@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TikTakToe.Core.Enums;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace TikTakToe.Core.Boards {
     public class BoardNew : Board {
@@ -35,6 +36,38 @@ namespace TikTakToe.Core.Boards {
             }
             else
                 return false;
+        }
+
+        public override int CalculateScore() {
+            Score = 0;
+            if (boardSquares[1, 1] == Squares.X) //quick middlecheck for effectient updating 
+            {
+                if (boardSquares[2, 2] == Squares.X && boardSquares[0, 0] == Squares.X) { Score = 1; }
+                else if (boardSquares[0, 2] == Squares.X && boardSquares[2, 0] == Squares.X) { Score = 1; }
+                else if (boardSquares[1, 0] == Squares.X && boardSquares[1, 2] == Squares.X) { Score = 1; }
+                else if (boardSquares[0, 1] == Squares.X && boardSquares[2, 1] == Squares.X) { Score = 1; }
+
+            }
+            else if (boardSquares[1, 1] == Squares.O)
+            {
+                if (boardSquares[2, 2] == Squares.O && boardSquares[0, 0] == Squares.O) { Score = -1; }
+                else if (boardSquares[0, 2] == Squares.O && boardSquares[2, 0] == Squares.O) { Score = -1; }
+                else if (boardSquares[1, 0] == Squares.O && boardSquares[1, 2] == Squares.O) { Score = -1; }
+                else if (boardSquares[0, 1] == Squares.O && boardSquares[2, 1] == Squares.O) { Score = -1; }
+
+            }
+            if (boardSquares[0, 0] == Squares.X && boardSquares[0, 1] == Squares.X && boardSquares[0, 2] == Squares.X) { Score = 1; }
+            if (boardSquares[2, 0] == Squares.X && boardSquares[2, 1] == Squares.X && boardSquares[2, 2] == Squares.X) { Score = 1; }
+            if (boardSquares[0, 0] == Squares.O && boardSquares[0, 1] == Squares.O && boardSquares[0, 2] == Squares.O) { Score = -1; }
+            if (boardSquares[2, 0] == Squares.O && boardSquares[2, 1] == Squares.O && boardSquares[2, 2] == Squares.O) { Score = -1; }
+            //check logic again
+            if (boardSquares[0, 0] == Squares.X && boardSquares[1, 0] == Squares.X && boardSquares[2, 0] == Squares.X) { Score = 1; }
+            if (boardSquares[0, 2] == Squares.X && boardSquares[1, 2] == Squares.X && boardSquares[2, 2] == Squares.X) { Score = 1; }
+            if (boardSquares[0, 0] == Squares.O && boardSquares[1, 0] == Squares.O && boardSquares[2, 0] == Squares.O) { Score = -1; }
+            if (boardSquares[0, 2] == Squares.O && boardSquares[1, 2] == Squares.O && boardSquares[2, 2] == Squares.O) { Score = -1; }
+            // give some points for 2 in a row with a 0 in them
+
+            return Score;
         }
 
         public override Squares[,] Get2Dim() {

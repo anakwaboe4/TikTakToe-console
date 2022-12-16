@@ -13,7 +13,7 @@ the engine is played with the numpad. it is very self explaining.
 - I play on square 5
 - My move is on the board
 - The engine answers 
-- The engine give back his evaluation (0 = draw, 1 = X is winning, -1 = O is winning)
+- The engine give back his evaluation (0 = draw, 10 = X is winning, -10 = O is winning)
 
 **good luck**
 ## menu 
@@ -33,6 +33,5 @@ If you type **100** you enter the menu.
 	- all the ai from a startup config and a blank board
 	- all the ai with a second move
 	- the ai's (running) from startup
-- option 7: hidden option that benches multithreated transpo ai (this one was a fail because it is slower then single thread transpo)
-
-## !! happy now BinaryPilot !!
+- option 7: benches multithreated transpo ai (this one was a fail because it is slower then single thread transpo)
+- option 8: allows you to let the ai play vs a random move generator and see the results

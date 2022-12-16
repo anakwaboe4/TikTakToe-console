@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TikTakToe.Core.Enums;
-using static System.Formats.Asn1.AsnWriter;
+﻿using TikTakToe.Core.Enums;
 
 namespace TikTakToe.Core.Boards {
     public class BoardNew : Board {
@@ -70,7 +64,7 @@ namespace TikTakToe.Core.Boards {
             return Score;
         }
 
-        public override Squares[,] Get2Dim() {
+        public override Squares[,] GetBoard() {
             return boardSquares;
         }
     }

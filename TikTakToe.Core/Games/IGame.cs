@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TikTakToe.Core.Enums;
 
-namespace TikTakToe.Core.Games
-{
+namespace TikTakToe.Core.Games {
     public interface IGame {
-
+        public bool MakeMove(int x, int y);
+        public Squares[,] GetBoard();
     }
 }

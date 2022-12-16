@@ -18,6 +18,6 @@ namespace TikTakToe.Core.Boards {
 
         public abstract int CalculateScore();
 
-        public abstract Squares[,] Get2Dim();
+        public abstract Squares[,] GetBoard();
     }
 }

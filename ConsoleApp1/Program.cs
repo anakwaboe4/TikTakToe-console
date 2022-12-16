@@ -6,6 +6,7 @@ using TikTakToe;
 Console.WriteLine("Hello, welcome to my simple game. TikTakToe");
 Stopwatch sw = new Stopwatch();
 bool transpotable = true;
+bool randommover = false;
 while (true)
 {
     bool reverse = false;
@@ -13,6 +14,7 @@ while (true)
     AI ai = new AI();
     AISingle aISingle = new AISingle();
     AIMulti aIMulti = new AIMulti();
+    RandomAI rando = new RandomAI();
     Console.WriteLine("if you want to open the menu at any time type 100");
 
     while (ai.end && aIMulti.end)
@@ -29,12 +31,14 @@ while (true)
                 Console.WriteLine("1: start a new game");
                 if (transpotable) { Console.WriteLine("2: turn of the \"cheaty\" transpotable (makes it slower)"); }
                 else { Console.WriteLine("2: turn on the \"cheaty\" transpotable"); }
-                Console.WriteLine("3: bench with transpotable");
-                Console.WriteLine("4: bench with parrallel calculation");
-                Console.WriteLine("5: bench with singel treath calculation");
-                Console.WriteLine("6: full benchmark");
-                Console.WriteLine("7: bench with parrallel transpo calculation (failed ai)");
-                Console.WriteLine("8: random move vs perfect ai");
+                if (randommover) { Console.WriteLine("3: turn off the random move maker"); }
+                else { Console.WriteLine("3: turn on the random move maker"); }
+                Console.WriteLine("4: bench with transpotable");
+                Console.WriteLine("5: bench with parrallel calculation");
+                Console.WriteLine("6: bench with singel treath calculation");
+                Console.WriteLine("7: full benchmark");
+                Console.WriteLine("8: bench with parrallel transpo calculation (failed ai)");
+                Console.WriteLine("9: random move vs perfect ai");
                 int option = Convert.ToInt32(Console.ReadLine());
                 AI benchai = new AI();
                 switch (option)
@@ -46,6 +50,9 @@ while (true)
                         transpotable = !transpotable;
                         break;
                     case 3:
+                        randommover= !randommover;
+                        break;
+                    case 4:
                         sw.Restart();
                         sw.Start();
                         _ = benchai.calculate(new Board());
@@ -58,21 +65,21 @@ while (true)
                         sw.Stop();
                         Console.WriteLine("Score:" + sw.ElapsedMilliseconds + "ms");
                         break;
-                    case 4:
+                    case 5:
                         sw.Restart();
                         sw.Start();
                         _ = aIMulti.calculate(new Board());
                         sw.Stop();
                         Console.WriteLine("Score:" + sw.ElapsedMilliseconds + "ms");
                         break;
-                    case 5:
+                    case 6:
                         sw.Restart();
                         sw.Start();
                         _ = aISingle.calculate(new Board());
                         sw.Stop();
                         Console.WriteLine("Score:" + sw.ElapsedMilliseconds + "ms");
                         break;
-                    case 6:
+                    case 7:
                         Console.WriteLine("making the cores hot and ready");
                         _ = aIMulti.calculate(new Board());
                         Console.WriteLine("and go" + Environment.NewLine);
@@ -127,15 +134,15 @@ while (true)
                         Console.WriteLine("TimesTranspo: " + sw.ElapsedMilliseconds + "ms");
                         break;
 
-                    case 7: AITransMulti aITransMulti = new AITransMulti();
+                    case 8: AITransMulti aITransMulti = new AITransMulti();
                         sw.Restart();
                         sw.Start();
                         _ = aITransMulti.calculate(new Board());
                         sw.Stop();
                         Console.WriteLine("TimeMultiTranspo: " + sw.ElapsedMilliseconds + "ms");
                         break;
-                    case 8:
-                        RandomAI rando = new RandomAI();
+                    case 9:
+                        rando = new RandomAI();
                         Board randoboard = new Board();
                         int wins = 0;
                         int loses = 0;
@@ -237,7 +244,8 @@ while (true)
             {
                 if (!reverse)
                 {
-                    if (transpotable) { currentboard = ai.calculateReverse(currentboard); }
+                    if (randommover) { currentboard = rando.calculateReverse(currentboard); }
+                    else if (transpotable) { currentboard = ai.calculateReverse(currentboard); }
                     else { currentboard = aIMulti.calculateReverse(currentboard); }
                     WriteBoard(currentboard.boardState);
                     Console.WriteLine("the current score is: " + currentboard.score);
@@ -255,7 +263,8 @@ while (true)
                 }
                 else
                 {
-                    if (transpotable) { currentboard = ai.calculate(currentboard); }
+                    if (randommover) { currentboard = rando.calculate(currentboard); }
+                    else if (transpotable) { currentboard = ai.calculate(currentboard); }
                     else { currentboard = aIMulti.calculate(currentboard); }
                     WriteBoard(currentboard.boardState);
                     Console.WriteLine("the current score is: " + currentboard.score);
@@ -279,7 +288,8 @@ while (true)
                 {
                     currentboard.makeMove(square);
                     WriteBoard(currentboard.boardState);
-                    if (transpotable) { currentboard = ai.calculate(currentboard); }
+                    if (randommover) { currentboard = rando.calculate(currentboard); }
+                    else if (transpotable) { currentboard = ai.calculate(currentboard); }
                     else { currentboard = aIMulti.calculate(currentboard); }
                     WriteBoard(currentboard.boardState);
                     Console.WriteLine("the current score is: " + currentboard.score);
@@ -306,7 +316,8 @@ while (true)
                 {
                     currentboard.makeMoveO(square);
                     WriteBoard(currentboard.boardState);
-                    if (transpotable) { currentboard = ai.calculateReverse(currentboard); }
+                    if (randommover) { currentboard = rando.calculateReverse(currentboard); }
+                    else if (transpotable) { currentboard = ai.calculateReverse(currentboard); }
                     else { currentboard = aIMulti.calculateReverse(currentboard); }
                     WriteBoard(currentboard.boardState);
                     Console.WriteLine("the current score is: " + currentboard.score);

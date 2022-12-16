@@ -7,38 +7,38 @@ using TikTakToe.Core.Enums;
 
 namespace TikTakToe.Core.Boards {
     public class BoardNew : Board {
+        private Squares[,] boardSquares;
 
-        public BoardNew() {
-            
+        public BoardNew(int lengthX, int lengthY) : base(lengthX, lengthY) {
+            boardSquares = new Squares[lengthX, lengthY];
         }
 
-        public Board(Squares[,] squares) {
-            BoardSquares = squares;
-            lengthX = BoardSquares.GetLength(0);
-            lengthY = BoardSquares.GetLength(1);
-        }
+        public override bool CheckMove(int position, int move) {
+            int x = (position - 1) / LengthX;
+            int y = (position - 1) % LengthX;
 
-        public bool CheckMove(int position, int move) {
-            int x = (position - 1) / lengthX;
-            int y = (position - 1) % lengthX;
-
-            if(BoardSquares[x, y] != Squares.Empty) {
+            if(boardSquares[x, y] != Squares.Empty) {
                 return true;
             }
             else
                 return false;
         }
 
-        public bool MakeMove(int position, Squares move) {
-            int x = (position - 1) / lengthX;
-            int y = (position - 1) % lengthX;
+        public override bool MakeMove(int position, Squares move) {
+            int x = (position - 1) / LengthX;
+            int y = (position - 1) % LengthX;
 
-            if(BoardSquares[x, y] != Squares.Empty) {
-                BoardSquares[x, y] = move;
+            if(boardSquares[x, y] != Squares.Empty) {
+                boardSquares[x, y] = move;
+                Move++;
                 return true;
             }
             else
                 return false;
+        }
+
+        public override Squares[,] Get2Dim() {
+            return boardSquares;
         }
     }
 }

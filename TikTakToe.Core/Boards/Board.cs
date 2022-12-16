@@ -2,48 +2,20 @@
 
 namespace TikTakToe.Core.Boards {
     public abstract class Board {
-        public Squares[,] BoardSquares { get; set; }
-        public int Score { get; set; } = 0;
-        public int Move { get; set; } = 0;
+        public int Score { get; internal set; } = 0;
+        public int Move { get; internal set; } = 0;
+        public int LengthX { get; }
+        public int LengthY { get; }
 
-        private int lengthX;
-        private int lengthY;
-
-        public Board() {
-            BoardSquares = new Squares[3, 3];
-            lengthX = BoardSquares.GetLength(0);
-            lengthY = BoardSquares.GetLength(1);
+        public Board(int lengthX, int lengthY) {
+            LengthX = lengthX;
+            LengthY = lengthY;
         }
 
-        public Board(Squares[,] squares) {
-            BoardSquares = squares;
-            lengthX = BoardSquares.GetLength(0);
-            lengthY = BoardSquares.GetLength(1);
-        }
+        public abstract bool CheckMove(int position, int move);
 
-        public bool CheckMove(int position, int move) {
-            int x = (position - 1) / lengthX;
-            int y = (position - 1) % lengthX;
+        public abstract bool MakeMove(int position, Squares move);
 
-            if(BoardSquares[x, y] != Squares.Empty) {
-                return true;
-            }
-            else
-                return false;
-        }
-
-        public bool MakeMove(int position, Squares move) {
-            int x = (position - 1) / lengthX;
-            int y = (position - 1) % lengthX;
-
-            if(BoardSquares[x, y] != Squares.Empty) {
-                BoardSquares[x, y] = move;
-                return true;
-            }
-            else
-                return false;
-        }
-
-
+        public abstract Squares[,] Get2Dim();
     }
 }

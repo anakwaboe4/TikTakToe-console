@@ -28,7 +28,7 @@ namespace ConsoleApp1
 
         public bool checkMove(int square)
         {
-            int x = Convert.ToInt32(Math.Floor((double)(square -1) / 3));
+            int x = (square - 1) / 3;
             int y = (square -1) % 3;
             if (boardState[x,y] == 0)
             {
@@ -41,13 +41,13 @@ namespace ConsoleApp1
         }
         public void makeMove(int square)
         {
-            int x = Convert.ToInt32(Math.Floor((double)(square -1) / 3));
+            int x = (square -1) / 3;
             int y = (square -1) % 3;
             boardState[x, y] = 1;
         }
         public void makeMoveO(int square)
         {
-            int x = Convert.ToInt32(Math.Floor((double)(square - 1) / 3));
+            int x = (square - 1) / 3;
             int y = (square - 1) % 3;
             boardState[x, y] = 2;
         }
@@ -84,65 +84,65 @@ namespace ConsoleApp1
             // to increase the change of winning i added a smaller bonus for 2 in a row with 3th being empty
             if (boardState[1, 1] == 1) //quick middlecheck for effectient updating 
             {
-                if (boardState[2, 2] == 1 && boardState[0, 0] == 0) { score += 1; }
-                if (boardState[0, 2] == 1 && boardState[2, 0] == 0) { score += 1; }
-                if (boardState[1, 0] == 1 && boardState[1, 2] == 0) { score += 1; }
-                if (boardState[0, 1] == 1 && boardState[2, 1] == 0) { score += 1; }
-                if (boardState[2, 2] == 0 && boardState[0, 0] == 1) { score += 1; }
-                if (boardState[0, 2] == 0 && boardState[2, 0] == 1) { score += 1; }
-                if (boardState[1, 0] == 0 && boardState[1, 2] == 1) { score += 1; }
-                if (boardState[0, 1] == 0 && boardState[2, 1] == 1) { score += 1; }
+                if (boardState[2, 2] == 1 && boardState[0, 0] == 0) { score++; }
+                if (boardState[0, 2] == 1 && boardState[2, 0] == 0) { score++; }
+                if (boardState[1, 0] == 1 && boardState[1, 2] == 0) { score++; }
+                if (boardState[0, 1] == 1 && boardState[2, 1] == 0) { score++; }
+                if (boardState[2, 2] == 0 && boardState[0, 0] == 1) { score++; }
+                if (boardState[0, 2] == 0 && boardState[2, 0] == 1) { score++; }
+                if (boardState[1, 0] == 0 && boardState[1, 2] == 1) { score++; }
+                if (boardState[0, 1] == 0 && boardState[2, 1] == 1) { score++; }
 
             }
             else if (boardState[1, 1] == 2)
             {
-                if (boardState[2, 2] == 2 && boardState[0, 0] == 0) { score += -1; }
-                if (boardState[0, 2] == 2 && boardState[2, 0] == 0) { score += -1; }
-                if (boardState[1, 0] == 2 && boardState[1, 2] == 0) { score += -1; }
-                if (boardState[0, 1] == 2 && boardState[2, 1] == 0) { score += -1; }
-                if (boardState[2, 2] == 0 && boardState[0, 0] == 2) { score += -1; }
-                if (boardState[0, 2] == 0 && boardState[2, 0] == 2) { score += -1; }
-                if (boardState[1, 0] == 0 && boardState[1, 2] == 2) { score += -1; }
-                if (boardState[0, 1] == 0 && boardState[2, 1] == 2) { score += -1; }
+                if (boardState[2, 2] == 2 && boardState[0, 0] == 0) { score--; }
+                if (boardState[0, 2] == 2 && boardState[2, 0] == 0) { score--; }
+                if (boardState[1, 0] == 2 && boardState[1, 2] == 0) { score--; }
+                if (boardState[0, 1] == 2 && boardState[2, 1] == 0) { score--; }
+                if (boardState[2, 2] == 0 && boardState[0, 0] == 2) { score--; }
+                if (boardState[0, 2] == 0 && boardState[2, 0] == 2) { score--; }
+                if (boardState[1, 0] == 0 && boardState[1, 2] == 2) { score--; }
+                if (boardState[0, 1] == 0 && boardState[2, 1] == 2) { score--; }
                     
             }
             if (boardState[1, 1] == 0) //if the center is empty the game is on
             {
-                if (boardState[2, 2] == 1 && boardState[0, 0] == 1) { score += 1; }
-                if (boardState[0, 2] == 1 && boardState[2, 0] == 1) { score += 1; }
-                if (boardState[1, 0] == 1 && boardState[1, 2] == 1) { score += 1; }
-                if (boardState[0, 1] == 1 && boardState[2, 1] == 1) { score += 1; }
-                if (boardState[2, 2] == 2 && boardState[0, 0] == 2) { score += -1; }
-                if (boardState[0, 2] == 2 && boardState[2, 0] == 2) { score += -1; }
-                if (boardState[1, 0] == 2 && boardState[1, 2] == 2) { score += -1; }
-                if (boardState[0, 1] == 2 && boardState[2, 1] == 2) { score += -1; }
+                if (boardState[2, 2] == 1 && boardState[0, 0] == 1) { score++; }
+                if (boardState[0, 2] == 1 && boardState[2, 0] == 1) { score++; }
+                if (boardState[1, 0] == 1 && boardState[1, 2] == 1) { score++; }
+                if (boardState[0, 1] == 1 && boardState[2, 1] == 1) { score++; }
+                if (boardState[2, 2] == 2 && boardState[0, 0] == 2) { score--; }
+                if (boardState[0, 2] == 2 && boardState[2, 0] == 2) { score--; }
+                if (boardState[1, 0] == 2 && boardState[1, 2] == 2) { score--; }
+                if (boardState[0, 1] == 2 && boardState[2, 1] == 2) { score--; }
 
             }
-            if (boardState[0, 0] == 1 && boardState[0, 1] == 1 && boardState[0, 2] == 0) { score += 1; }
-            if (boardState[2, 0] == 1 && boardState[2, 1] == 1 && boardState[2, 2] == 0) { score += 1; }
-            if (boardState[0, 0] == 2 && boardState[0, 1] == 2 && boardState[0, 2] == 0) { score += -1; }
-            if (boardState[2, 0] == 2 && boardState[2, 1] == 2 && boardState[2, 2] == 0) { score += -1; }
-            if (boardState[0, 0] == 1 && boardState[0, 1] == 0 && boardState[0, 2] == 1) { score += 1; }
-            if (boardState[2, 0] == 1 && boardState[2, 1] == 0 && boardState[2, 2] == 1) { score += 1; }
-            if (boardState[0, 0] == 2 && boardState[0, 1] == 0 && boardState[0, 2] == 2) { score += -1; }
-            if (boardState[2, 0] == 2 && boardState[2, 1] == 0 && boardState[2, 2] == 2) { score += -1; }
-            if (boardState[0, 0] == 0 && boardState[0, 1] == 1 && boardState[0, 2] == 1) { score += 1; }
-            if (boardState[2, 0] == 0 && boardState[2, 1] == 1 && boardState[2, 2] == 1) { score += 1; }
-            if (boardState[0, 0] == 0 && boardState[0, 1] == 2 && boardState[0, 2] == 2) { score += -1; }
-            if (boardState[2, 0] == 0 && boardState[2, 1] == 2 && boardState[2, 2] == 2) { score += -1; }
+            if (boardState[0, 0] == 1 && boardState[0, 1] == 1 && boardState[0, 2] == 0) { score++; }
+            if (boardState[2, 0] == 1 && boardState[2, 1] == 1 && boardState[2, 2] == 0) { score++; }
+            if (boardState[0, 0] == 2 && boardState[0, 1] == 2 && boardState[0, 2] == 0) { score--; }
+            if (boardState[2, 0] == 2 && boardState[2, 1] == 2 && boardState[2, 2] == 0) { score--; }
+            if (boardState[0, 0] == 1 && boardState[0, 1] == 0 && boardState[0, 2] == 1) { score++; }
+            if (boardState[2, 0] == 1 && boardState[2, 1] == 0 && boardState[2, 2] == 1) { score++; }
+            if (boardState[0, 0] == 2 && boardState[0, 1] == 0 && boardState[0, 2] == 2) { score--; }
+            if (boardState[2, 0] == 2 && boardState[2, 1] == 0 && boardState[2, 2] == 2) { score--; }
+            if (boardState[0, 0] == 0 && boardState[0, 1] == 1 && boardState[0, 2] == 1) { score++; }
+            if (boardState[2, 0] == 0 && boardState[2, 1] == 1 && boardState[2, 2] == 1) { score++; }
+            if (boardState[0, 0] == 0 && boardState[0, 1] == 2 && boardState[0, 2] == 2) { score--; }
+            if (boardState[2, 0] == 0 && boardState[2, 1] == 2 && boardState[2, 2] == 2) { score--; }
             //check logic again
-            if (boardState[0, 0] == 1 && boardState[1, 0] == 1 && boardState[2, 0] == 0) { score += 1;  }
-            if (boardState[0, 2] == 1 && boardState[1, 2] == 1 && boardState[2, 2] == 0) { score += 1; }
-            if (boardState[0, 0] == 2 && boardState[1, 0] == 2 && boardState[2, 0] == 0) { score += -1; }
-            if (boardState[0, 2] == 2 && boardState[1, 2] == 2 && boardState[2, 2] == 0) { score += -1; }
-            if (boardState[0, 0] == 1 && boardState[1, 0] == 0 && boardState[2, 0] == 1) { score += 1; }
-            if (boardState[0, 2] == 1 && boardState[1, 2] == 0 && boardState[2, 2] == 1) { score += 1; }
-            if (boardState[0, 0] == 2 && boardState[1, 0] == 0 && boardState[2, 0] == 2) { score += -1; }
-            if (boardState[0, 2] == 2 && boardState[1, 2] == 0 && boardState[2, 2] == 2) { score += -1; }
-            if (boardState[0, 0] == 0 && boardState[1, 0] == 1 && boardState[2, 0] == 1) { score += 1; }
-            if (boardState[0, 2] == 0 && boardState[1, 2] == 1 && boardState[2, 2] == 1) { score += 1; }
-            if (boardState[0, 0] == 0 && boardState[1, 0] == 2 && boardState[2, 0] == 2) { score += -1; }
-            if (boardState[0, 2] == 0 && boardState[1, 2] == 2 && boardState[2, 2] == 2) { score += -1; }
+            if (boardState[0, 0] == 1 && boardState[1, 0] == 1 && boardState[2, 0] == 0) { score++;  }
+            if (boardState[0, 2] == 1 && boardState[1, 2] == 1 && boardState[2, 2] == 0) { score++; }
+            if (boardState[0, 0] == 2 && boardState[1, 0] == 2 && boardState[2, 0] == 0) { score--; }
+            if (boardState[0, 2] == 2 && boardState[1, 2] == 2 && boardState[2, 2] == 0) { score--; }
+            if (boardState[0, 0] == 1 && boardState[1, 0] == 0 && boardState[2, 0] == 1) { score++; }
+            if (boardState[0, 2] == 1 && boardState[1, 2] == 0 && boardState[2, 2] == 1) { score++; }
+            if (boardState[0, 0] == 2 && boardState[1, 0] == 0 && boardState[2, 0] == 2) { score--; }
+            if (boardState[0, 2] == 2 && boardState[1, 2] == 0 && boardState[2, 2] == 2) { score--; }
+            if (boardState[0, 0] == 0 && boardState[1, 0] == 1 && boardState[2, 0] == 1) { score++; }
+            if (boardState[0, 2] == 0 && boardState[1, 2] == 1 && boardState[2, 2] == 1) { score++; }
+            if (boardState[0, 0] == 0 && boardState[1, 0] == 2 && boardState[2, 0] == 2) { score--; }
+            if (boardState[0, 2] == 0 && boardState[1, 2] == 2 && boardState[2, 2] == 2) { score--; }
         }
         public object Clone()
         {

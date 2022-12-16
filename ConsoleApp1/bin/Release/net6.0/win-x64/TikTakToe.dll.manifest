@@ -68,7 +68,11 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
       <dsig:DigestValue>wlbrVZ84PQj+FTEHuK8Eyt+QmdrSnWUronyTWvthMnE=</dsig:DigestValue>
+=======
+      <dsig:DigestValue>MSHdZVMlgX71tAfhqThq0JpxZOYAaEtNMDaHzVJnNjs=</dsig:DigestValue>
+>>>>>>> e23d32b6b49e6184ee44c511c466eca90ca0823c
     </hash>
   </file>
   <file name="TikTakToe.exe" size="148400">
@@ -77,7 +81,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>KNtUR9BknGHdvH8Ff1IERtl5Kn/DjGSqUyEyR1BcBps=</dsig:DigestValue>
+      <dsig:DigestValue>ITIwNZQEM4i0uYNCWTtXiPX0fnqBr3pQNJ4L4OYfRjk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TikTakToe.runtimeconfig.json" size="253">

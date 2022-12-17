@@ -1,5 +1,0 @@
-C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\publish\TikTakToe.exe
-C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\publish\TikTakToe.dll
-C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\publish\TikTakToe.deps.json
-C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\publish\TikTakToe.runtimeconfig.json
-C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\publish\TikTakToe.pdb

@@ -14,6 +14,7 @@ namespace ConsoleApp1
     {
         public bool end;
         public int score;
+        bool reverse = false;
         public AISingle()
         {
             end = true;
@@ -23,8 +24,9 @@ namespace ConsoleApp1
         public Board calculate(Board board)
         {
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
+                reverse = false;
                 List<Board> moves = new List<Board>();
                 for(int i = 1; i < 10; i++)
                 {
@@ -56,12 +58,12 @@ namespace ConsoleApp1
         public Board calculateReverse(Board board)
         {
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
                 List<Board> moves = new List<Board>();
                 for (int i = 1; i < 10; i++)
                 {
-
+                    reverse = true;
                     if (board.checkMove(i))
                     {
                         Board newboard = (Board)board.Clone();
@@ -89,7 +91,7 @@ namespace ConsoleApp1
         public Board calculateBeta(Board board)
         {
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
                 List<int> scores = new List<int>();
                 for (int i = 1; i < 10; i++)
@@ -107,15 +109,18 @@ namespace ConsoleApp1
                     return board;
                 }
                 board.score = scores.Max();
-                
-                
+                if (!reverse && board.score != 1000)
+                {
+                    board.score = scores.Sum() / scores.Count();
+                }
+
             }
             return board;
         }
         public Board calculateAlfa(Board board)
         {
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
                 List<int> scores = new List<int>();
                 for (int i = 1; i < 10; i++)
@@ -132,7 +137,10 @@ namespace ConsoleApp1
                     return board;
                 }
                 board.score = scores.Min();
-                
+                if (reverse && board.score != -1000)
+                {
+                    board.score = scores.Sum() / scores.Count();
+                }
 
             }
             return board;

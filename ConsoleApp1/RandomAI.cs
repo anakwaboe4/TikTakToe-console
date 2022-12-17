@@ -19,7 +19,7 @@ namespace TikTakToe
         public Board calculate(Board board)
         {
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
                 List<Board> moves = new List<Board>();
                 for (int i = 1; i < 10; i++)
@@ -47,7 +47,7 @@ namespace TikTakToe
         public Board calculateReverse(Board board)
         {
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
                 List<Board> moves = new List<Board>();
                 for (int i = 1; i < 10; i++)

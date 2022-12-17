@@ -15,18 +15,22 @@ namespace ConsoleApp1
         public bool end;
         public int score;
         public List<Board> transpotable = new List<Board>();
+        bool reverse = false;
         public AI()
         {
             end = true;
             score = 0;
             transpotable = new List<Board>();
+            
         }
 
         public Board calculate(Board board)
         {
+            
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
+                reverse = false;
                 List<Board> moves = new List<Board>();
                 for (int i = 1; i < 10; i++)
                 {
@@ -58,8 +62,9 @@ namespace ConsoleApp1
         public Board calculateReverse(Board board)
         {
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
+                reverse = true;
                 List<Board> moves = new List<Board>();
                 for (int i = 1; i < 10; i++)
                 {
@@ -91,12 +96,12 @@ namespace ConsoleApp1
         public Board calculateBeta(Board board)
         {
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
                 foreach (Board board1 in transpotable)
                 {
                     int score = board1.Valcheck(board);
-                    if (score != 5)
+                    if (score != 5000)
                     {
                         board.score = score;
                         return board;
@@ -118,7 +123,10 @@ namespace ConsoleApp1
                     return board;
                 }
                 board.score = scores.Max();
-
+                if (!reverse && board.score != 1000)
+                {
+                    board.score = scores.Sum() / scores.Count();
+                }
 
             }
             transpotable.Add(board);
@@ -127,12 +135,12 @@ namespace ConsoleApp1
         public Board calculateAlfa(Board board)
         {
             board.checkscore();
-            if (board.score < 10 && board.score > -10)
+            if (board.score < 1000 && board.score > -1000)
             {
                 foreach (Board board1 in transpotable)
                 {
                     int score = board1.Valcheck(board);
-                    if (score != 5)
+                    if (score != 5000)
                     {
                         board.score = score;
                         return board;
@@ -153,6 +161,11 @@ namespace ConsoleApp1
                     return board;
                 }
                 board.score = scores.Min();
+                if (reverse && board.score != -1000)
+                {
+                    board.score = scores.Sum()/ scores.Count();
+                }
+                
 
 
             }

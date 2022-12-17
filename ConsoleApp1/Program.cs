@@ -369,22 +369,21 @@ while (true)
 }
 
 
-static void WriteBoard(int[,] arr)
+static void WriteBoard(int[] arr)
 {
-    int rowLength = arr.GetLength(0);
-    int colLength = arr.GetLength(1);
+    int Length = arr.GetLength(0);
 
-    for (int i = 0; i < rowLength; i++)
+    for (int i = 0; i < Length; i++)
     {
         Console.Write("|");
-        for (int j = 0; j < colLength; j++)
+        if (arr[i] == 0) Console.Write(" ");
+        if (arr[i] == 1) Console.Write("X");
+        if (arr[i] == 2) Console.Write("O");
+        if (i %3 == 0)
         {
-            if (arr[i, j] == 0) Console.Write(" ");
-            if (arr[i, j] == 1) Console.Write("X");
-            if (arr[i, j] == 2) Console.Write("O");
-            Console.Write("|");
+            Console.WriteLine("|");
         }
-        Console.Write(Environment.NewLine);
+
     }
     Console.Write(Environment.NewLine);
 

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj": {}
+    "C:\\Users\\laurent aerens\\source\\repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj": {
+    "C:\\Users\\laurent aerens\\source\\repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj",
+        "projectUniqueName": "C:\\Users\\laurent aerens\\source\\repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj",
         "projectName": "TikTakToe",
-        "projectPath": "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj",
+        "projectPath": "C:\\Users\\laurent aerens\\source\\repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj",
         "packagesPath": "C:\\Users\\laurent aerens\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",

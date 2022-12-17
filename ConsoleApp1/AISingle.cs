@@ -28,7 +28,8 @@ namespace ConsoleApp1
             {
                 reverse = false;
                 List<Board> moves = new List<Board>();
-                for(int i = 1; i < 10; i++)
+                List<int> scores = new List<int>();
+                for (int i = 1; i < 10; i++)
                 {
 
                     if (board.checkMove(i))
@@ -36,13 +37,9 @@ namespace ConsoleApp1
                         Board newboard = (Board)board.Clone();
                         newboard.makeMoveO(i);
                         moves.Add(calculateBeta(newboard));
+                        scores.Add(newboard.score);
                     }
 
-                }
-                List<int> scores = new List<int>();
-                foreach (Board board1 in moves)
-                {
-                    scores.Add(board1.score);
                 }
                 if (scores.Count == 0)
                 {
@@ -61,6 +58,7 @@ namespace ConsoleApp1
             if (board.score < 1000 && board.score > -1000)
             {
                 List<Board> moves = new List<Board>();
+                List<int> scores = new List<int>();
                 for (int i = 1; i < 10; i++)
                 {
                     reverse = true;
@@ -69,13 +67,9 @@ namespace ConsoleApp1
                         Board newboard = (Board)board.Clone();
                         newboard.makeMove(i);
                         moves.Add(calculateAlfa(newboard));
+                        scores.Add(newboard.score);
                     }
 
-                }
-                List<int> scores = new List<int>();
-                foreach (Board board1 in moves)
-                {
-                    scores.Add(board1.score);
                 }
                 if (scores.Count == 0)
                 {

@@ -31,6 +31,7 @@ namespace ConsoleApp1
             {
                 reverse = false;
                 List<Board> moves = new List<Board>();
+                List<int> scores = new List<int>();
                 Parallel.For(1, 10, i =>
                 {
 
@@ -39,14 +40,10 @@ namespace ConsoleApp1
                         Board newboard = (Board)board.Clone();
                         newboard.makeMoveO(i);
                         moves.Add(calculateBeta(newboard));
+                        scores.Add(newboard.score);
                     }
 
                 });
-                List<int> scores = new List<int>();
-                foreach (Board board1 in moves)
-                {
-                    scores.Add(board1.score);
-                }
                 if (scores.Count == 0)
                 {
                     Console.WriteLine("This was a draw, want to play again?");
@@ -65,6 +62,7 @@ namespace ConsoleApp1
             {
                 reverse = true;
                 List<Board> moves = new List<Board>();
+                List<int> scores = new List<int>();
                 Parallel.For(1, 10, i =>
                 {
 
@@ -72,15 +70,11 @@ namespace ConsoleApp1
                     {
                         Board newboard = (Board)board.Clone();
                         newboard.makeMove(i);
-                        moves.Add(calculateAlfa(newboard));
+                        moves.Add(calculateAlfa(newboard)); 
+                        scores.Add(newboard.score);
                     }
 
                 });
-                List<int> scores = new List<int>();
-                foreach (Board board1 in moves)
-                {
-                    scores.Add(board1.score);
-                }
                 if (scores.Count == 0)
                 {
                     Console.WriteLine("This was a draw, want to play again?");

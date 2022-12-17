@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\laerens\\source\\repos\\tiktaktoe\\ConsoleApp1\\TikTakToe.csproj": {}
+    "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\laerens\\source\\repos\\tiktaktoe\\ConsoleApp1\\TikTakToe.csproj": {
+    "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\laerens\\source\\repos\\tiktaktoe\\ConsoleApp1\\TikTakToe.csproj",
+        "projectUniqueName": "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj",
         "projectName": "TikTakToe",
-        "projectPath": "C:\\Users\\laerens\\source\\repos\\tiktaktoe\\ConsoleApp1\\TikTakToe.csproj",
-        "packagesPath": "C:\\Users\\laerens\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\laerens\\source\\repos\\tiktaktoe\\ConsoleApp1\\obj\\",
+        "projectPath": "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj",
+        "packagesPath": "C:\\Users\\laurent aerens\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\laurent aerens\\Source\\Repos\\TikTakToe\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\laerens\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\laurent aerens\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

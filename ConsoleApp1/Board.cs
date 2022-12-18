@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    [Serializable]
-    class Board : ICloneable
+    class Board 
     {
         public int[] boardState;
         public int score = 0;
@@ -76,19 +76,15 @@ namespace ConsoleApp1
             if (boardState[0] == 2 && boardState[3] == 2 && boardState[6] == 2) { score = -1000; return; }
             if (boardState[2] == 2 && boardState[5] == 2 && boardState[8] == 2) { score = -1000; return; }
         }
-        public object Clone()
+        public Board Clone()
         {
-            using (MemoryStream stream = new MemoryStream())
+            Board board = new Board();
+            for (int i = 0; i < boardState.Length; i++)
             {
-                if (this.GetType().IsSerializable)
-                {
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(stream, this);
-                    stream.Position = 0;
-                    return formatter.Deserialize(stream);
-                }
-                return 0;
+                board.boardState[i] = boardState[i];
             }
+            return board;
+
         }
 
         public int Valcheck(Board obj)

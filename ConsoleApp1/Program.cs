@@ -31,7 +31,7 @@ while (true)
             if (square == 100)
             {
                 Console.WriteLine("1: start a new game");
-                if (transpotable) { Console.WriteLine("2: turn of the \"cheaty\" transpotable (makes it slower)"); }
+                if (transpotable) { Console.WriteLine("2: turn of the \"cheaty\" transpotable"); }
                 else { Console.WriteLine("2: turn on the \"cheaty\" transpotable"); }
                 if (randommover) { Console.WriteLine("3: turn off the random move maker"); }
                 else { Console.WriteLine("3: turn on the random move maker"); }
@@ -371,18 +371,18 @@ while (true)
 
 static void WriteBoard(int[] arr)
 {
-    int Length = arr.GetLength(0);
 
-    for (int i = 0; i < Length; i++)
+    for (int i = 0; i < 9; i++)
     {
         Console.Write("|");
         if (arr[i] == 0) Console.Write(" ");
         if (arr[i] == 1) Console.Write("X");
         if (arr[i] == 2) Console.Write("O");
-        if (i %3 == 0)
+        if (i == 2 || i == 5 || i == 8)
         {
             Console.WriteLine("|");
         }
+
 
     }
     Console.Write(Environment.NewLine);

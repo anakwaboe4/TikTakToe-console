@@ -1,23 +1,58 @@
 ﻿using TikTakToe.Core.Enums;
 
 namespace TikTakToe.Core.Boards {
-    public abstract class Board {
-        public int Score { get; internal set; } = 0;
-        public int Move { get; internal set; } = 0;
-        public int LengthX { get; }
-        public int LengthY { get; }
+    [Serializable]
+    public class Board {
+        public Squares[] BoardSquares { get; set; }
+        public int Score { get; set; } = 0;
+        public int Move { get; set; } = 0;
+        public int LengthX { get; set; }
+        public int LengthY { get; set; }
+
+        public Board() {
+            LengthX = 3;
+            LengthY = 3;
+            BoardSquares = new Squares[LengthX * LengthY];
+        }
 
         public Board(int lengthX, int lengthY) {
             LengthX = lengthX;
             LengthY = lengthY;
+            BoardSquares = new Squares[LengthX * LengthY];
         }
 
-        public abstract bool CheckMove(int position, int move);
+        public bool CheckMove(int position) {
+            if(BoardSquares[position] == Squares.Empty) {
+                return true;
+            }
+            else
+                return false;
+        }
 
-        public abstract bool MakeMove(int position, Squares move);
+        public bool MakeMove(int position, Squares move) {
+            if(BoardSquares[position] == Squares.Empty) {
+                BoardSquares[position] = move;
+                Move++;
+                return true;
+            }
+            else
+                return false;
+        }
 
-        public abstract int CalculateScore();
+        public int CalculateScore() {
+            Score = 0;
 
-        public abstract Squares[,] GetBoard();
+            return Score;
+        }
+
+        public Squares[,] GetBoard() {
+            var returnBoard = new Squares[LengthX, LengthY];
+            for(int x = 0; x < LengthX; x++) {
+                for(int y = 0; y < LengthY; y++) {
+                    returnBoard[x, y] = BoardSquares[x * y];
+                }
+            }
+            return returnBoard;
+        }
     }
 }

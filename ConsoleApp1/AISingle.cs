@@ -34,7 +34,7 @@ namespace ConsoleApp1
 
                     if (board.checkMove(i))
                     {
-                        Board newboard = (Board)board.Clone();
+                        Board newboard = (Board)board.CloneReflection();
                         newboard.makeMoveO(i);
                         moves.Add(calculateBeta(newboard));
                         scores.Add(newboard.score);
@@ -64,7 +64,7 @@ namespace ConsoleApp1
                     reverse = true;
                     if (board.checkMove(i))
                     {
-                        Board newboard = (Board)board.Clone();
+                        Board newboard = (Board)board.CloneReflection();
                         newboard.makeMove(i);
                         moves.Add(calculateAlfa(newboard));
                         scores.Add(newboard.score);
@@ -93,7 +93,7 @@ namespace ConsoleApp1
 
                     if (board.checkMove(i))
                     {
-                        Board newboard = (Board)board.Clone();
+                        Board newboard = (Board)board.CloneReflection();
                         newboard.makeMove(i);
                         scores.Add(calculateAlfa(newboard).score);
                     }
@@ -121,7 +121,7 @@ namespace ConsoleApp1
                 {
                     if (board.checkMove(i))
                     {
-                        Board newboard = (Board)board.Clone();
+                        Board newboard = (Board)board.CloneReflection();
                         newboard.makeMoveO(i);
                         scores.Add(calculateBeta(newboard).score);
                     }

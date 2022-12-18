@@ -27,7 +27,7 @@ namespace TikTakToe
 
                     if (board.checkMove(i))
                     {
-                        Board newboard = (Board)board.Clone();
+                        Board newboard = (Board)board.CloneReflection();
                         newboard.makeMoveO(i);
                         moves.Add(newboard);
                     }
@@ -55,7 +55,7 @@ namespace TikTakToe
 
                     if (board.checkMove(i))
                     {
-                        Board newboard = (Board)board.Clone();
+                        Board newboard = (Board)board.CloneReflection();
                         newboard.makeMove(i);
                         moves.Add(newboard);
                     }

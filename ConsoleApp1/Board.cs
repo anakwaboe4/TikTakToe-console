@@ -95,6 +95,30 @@ namespace ConsoleApp1
             }
         }
 
+        public object CloneReflection() {
+            var type = GetType();
+
+            var target = Activator.CreateInstance(type);
+
+            foreach(var propertyInfo in type.GetProperties()) {
+                // Handle value types and string
+                if((propertyInfo.PropertyType.IsValueType ||
+                propertyInfo.PropertyType == typeof(string)) && propertyInfo.CanWrite) {
+                    propertyInfo.SetValue(target, propertyInfo.GetValue(this));
+                }
+                // Handle arrays
+                else if(propertyInfo.PropertyType.IsSubclassOf(typeof(Array))) {
+                    var value = (Array)propertyInfo.GetValue(this);
+
+                    if(value != null) {
+                        propertyInfo.SetValue(target, value.Clone());
+                    }
+                }
+            }
+
+            return (Board)target;
+        }
+
         public int Valcheck(Board obj)
         {
             for (int i = 0; i < 3; i++) {

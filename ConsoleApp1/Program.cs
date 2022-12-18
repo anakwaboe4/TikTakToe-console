@@ -82,6 +82,8 @@ while (true)
                         Console.WriteLine("Score:" + sw.ElapsedMilliseconds + "ms");
                         break;
                     case 8:
+                        benchai = new AI();
+                        aITransMulti = new AITransMulti();
                         Console.WriteLine("making the cores hot and ready");
                         _ = aIMulti.calculate(new Board());
                         Console.WriteLine("and go" + Environment.NewLine);

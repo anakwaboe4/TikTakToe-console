@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+yYPWa6gEYw/xO262aN0+nPipjmobg/Fd3TaKQKzmbBn/hRh95PVPFER4ipOY69Mk7XexVPbFWkw+25knl8VRw==",
+  "dgSpecHash": "rlH2L5KjzvZVAwR81Dg0nKiDCEvEbLSmeb8vfQfeV376TPvE+z2rkuoPyRv+Y/fo5vDCn7HRwjJLO2Fs/9xeOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\laurent aerens\\source\\repos\\TikTakToe\\ConsoleApp1\\TikTakToe.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\laurent aerens\\.nuget\\packages\\benchmarkdotnet.annotations\\0.13.2\\benchmarkdotnet.annotations.0.13.2.nupkg.sha512"
+  ],
   "logs": []
 }

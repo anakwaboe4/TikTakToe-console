@@ -89,18 +89,19 @@ namespace ConsoleApp1
         }
         public Board calculateBeta(Board board)
         {
+            foreach (Board board1 in transpotable)
+            {
+                int score = board1.Valcheck(board);
+                if (score != 5000)
+                {
+                    board.score = score;
+                    return board;
+                }
+            }
             board.checkscore();
             if (board.score < 1000 && board.score > -1000)
             {
-                foreach (Board board1 in transpotable)
-                {
-                    int score = board1.Valcheck(board);
-                    if (score != 5000)
-                    {
-                        board.score = score;
-                        return board;
-                    }
-                }
+                
                 List<int> scores = new List<int>();
                 for (int i = 1; i < 10; i++)
                 {
@@ -128,18 +129,19 @@ namespace ConsoleApp1
         }
         public Board calculateAlfa(Board board)
         {
+            foreach (Board board1 in transpotable)
+            {
+                int score = board1.Valcheck(board);
+                if (score != 5000)
+                {
+                    board.score = score;
+                    return board;
+                }
+            }
             board.checkscore();
             if (board.score < 1000 && board.score > -1000)
             {
-                foreach (Board board1 in transpotable)
-                {
-                    int score = board1.Valcheck(board);
-                    if (score != 5000)
-                    {
-                        board.score = score;
-                        return board;
-                    }
-                }
+                
                 List<int> scores = new List<int>();
                 for (int i = 1; i < 10; i++)
                 {

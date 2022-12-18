@@ -32,6 +32,8 @@ C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Release\net6.0\TikTakToe
 C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\bin\Release\net6.0\TikTakToe.application
 C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Release\net6.0\TikTakToe.dll.manifest
 C:\Users\laerens\source\repos\tiktaktoe\ConsoleApp1\obj\Release\net6.0\TikTakToe.application
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\BenchmarkDotNet.Annotations.dll
+C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\TikTakToe.csproj.CopyComplete
 C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\TikTakToe.dll.manifest
 C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\bin\Release\net6.0\TikTakToe.application
 C:\Users\laurent aerens\source\repos\TikTakToe\ConsoleApp1\obj\Release\net6.0\TikTakToe.dll.manifest

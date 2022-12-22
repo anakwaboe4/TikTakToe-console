@@ -14,9 +14,17 @@ namespace TikTakToe.Core.Games {
             this.board = board;
         }
 
+        public bool MakeMove(int position) {
+            return board.MakeMove(position, (board.Move % 2) == 0 ? Squares.X : Squares.O);
+        }
+
         public bool MakeMove(int x, int y)
         {
-            return board.MakeMove(x * y, Squares.X);
+            return board.MakeMove(x * y, (board.Move % 2) == 0 ? Squares.X : Squares.O);
+        }
+
+        public int GetMoves() {
+            return board.Move;
         }
 
         public Squares[,] GetBoard()

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TikTakToe.Blazor", "TikTakT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TikTakToe.Core", "TikTakToe.Core\TikTakToe.Core.csproj", "{606F04FC-4C46-4A56-9C1D-7C2AD55FD0CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TikTakToe.Console", "TikTakToe.Console\TikTakToe.Console.csproj", "{268AE530-1C63-4675-8907-96F605E975C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TikTakToe.Console", "TikTakToe.Console\TikTakToe.Console.csproj", "{268AE530-1C63-4675-8907-96F605E975C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

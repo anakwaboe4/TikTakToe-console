@@ -54,5 +54,21 @@ namespace TikTakToe.Core.Boards {
             }
             return returnBoard;
         }
+
+        public string PrintBoard() {
+            string stringBoard = "";
+            for(int y = 0; y < LengthY; y++) {
+                for(int x = 0; x < LengthX; x++) {
+                    stringBoard += BoardSquares[x * y] + " ";
+                }
+                if(y != LengthY - 1)
+                    stringBoard += "\n";
+            }
+            return stringBoard;
+        }
+
+        public override string ToString() {
+            return PrintBoard() + "\n" + Score + "\n" + Move + "\n" + LengthX + "\n" + LengthY;
+        }
     }
 }

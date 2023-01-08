@@ -31,5 +31,17 @@ namespace TikTakToe.Core.Games {
         {
             throw new NotImplementedException();
         }
+
+        public string GetBoardString() {
+            return board.PrintBoard();
+        }
+        
+        public int GetScore() {
+            return board.CalculateScore();
+        }
+
+        public override string ToString() {
+            return player1.ToString() + "\n" + player2.ToString() + "\n" + board.ToString();
+        }
     }
 }

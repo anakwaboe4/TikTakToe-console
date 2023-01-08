@@ -6,5 +6,8 @@ namespace TikTakToe.Core.Games {
         public bool MakeMove(int x, int y);
         public int GetMoves();
         public Squares[,] GetBoard();
+        string GetBoardString();
+        public int GetScore();
+        public string ToString();
     }
 }

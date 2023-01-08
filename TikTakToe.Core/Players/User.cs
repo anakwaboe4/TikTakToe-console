@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TikTakToe.Core.Boards;
 
 namespace TikTakToe.Core.Players {
-    public class Gamer : Player {
+    public class User : Player {
         public override int CalculateBestMove(Board board) {
             throw new NotImplementedException();
         }

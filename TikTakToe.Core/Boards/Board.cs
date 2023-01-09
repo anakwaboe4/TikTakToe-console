@@ -49,7 +49,7 @@ namespace TikTakToe.Core.Boards {
             var returnBoard = new Squares[LengthX, LengthY];
             for(int x = 0; x < LengthX; x++) {
                 for(int y = 0; y < LengthY; y++) {
-                    returnBoard[x, y] = BoardSquares[x * y];
+                    returnBoard[x, y] = BoardSquares[x + y];
                 }
             }
             return returnBoard;
@@ -59,7 +59,7 @@ namespace TikTakToe.Core.Boards {
             string stringBoard = "";
             for(int y = 0; y < LengthY; y++) {
                 for(int x = 0; x < LengthX; x++) {
-                    stringBoard += BoardSquares[x * y] + " ";
+                    stringBoard += BoardSquares[x + (y * LengthX)] + "\t";
                 }
                 if(y != LengthY - 1)
                     stringBoard += "\n";

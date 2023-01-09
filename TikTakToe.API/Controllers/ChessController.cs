@@ -4,14 +4,17 @@ using TikTakToe.Core.Games;
 using TikTakToe.Core.Players;
 using TikTakToe.Core.Boards;
 using TikTakToe.Core.Enums;
+using Newtonsoft.Json;
 
 namespace TikTakToe.API.Controllers {
     [Route("api/")]
     [ApiController]
     public class ChessController : ControllerBase {
+        private ChessBoard _chessBoard;
         private IGame _game;
 
-        public ChessController() {
+        public ChessController(ChessBoard chessBoard) {
+            _chessBoard = chessBoard;
             _game = new Game(new User(), new User(), new Board());
         }
 
@@ -22,7 +25,7 @@ namespace TikTakToe.API.Controllers {
             Player player1 = GetPlayer(player1Class);
             Player player2 = GetPlayer(player2Class);
 
-            var _game = new Game(player1, player2, new Board());
+            _chessBoard.Game = new Game(player1, player2, new Board());
 
             return Ok(_game.ToString());
         }
@@ -39,21 +42,22 @@ namespace TikTakToe.API.Controllers {
 
         [HttpPost]
         [Route("MakeMove/{position}/{move}")]
-        public IActionResult MakeMove(int position, Squares? move) {
-            _game.MakeMove(position);
+        public IActionResult? MakeMove(int position, Squares? move) {
+            _chessBoard.Game!.MakeMove(position);
+
             return Ok();
         }
 
         [HttpGet]
         [Route("score")]
-        public IActionResult Score() {
-            return Ok(_game.GetScore());
+        public IActionResult? Score() {
+            return Ok(_chessBoard.Game!.GetScore());
         }
 
         [HttpGet]
         [Route("board")]
-        public IActionResult Board() {
-            return Ok(_game.GetBoardString());
+        public IActionResult? Board() {
+            return Ok(_chessBoard.Game!.GetBoardString());
         }
     }
 }

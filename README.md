@@ -1,4 +1,5 @@
-﻿# TikTakToe
+﻿# TikTakToe-console
+ # Outdated now integrated in TikTakToe
 
 [![GitHub tag](https://img.shields.io/github/tag/anakwaboe4/TikTakToe?include_prereleases=&sort=semver&color=blue)](https://github.com/anakwaboe4/TikTakToe/releases/)
 [![License](https://img.shields.io/badge/License-GPLv3.0-blue)](#license)
